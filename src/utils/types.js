@@ -1,0 +1,9 @@
+export const CHANGE = "CHANGE";
+export const SELECTMOVIE = "SELECTMOVIE";
+export const MOVIESLIST = "MOVIESLIST";
+export const TDAY = "TDAY";
+export const TWEEK = "TWEEK";
+export const TRATED = "TRATED";
+export const POPULAR = "POPULAR";
+export const SEARCHMOVIE = "SEARCHMOVIE";
+export const LISTSTATE = "LISTSTATE";

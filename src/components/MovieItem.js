@@ -52,7 +52,7 @@ const useStyles = makeStyles({
   },
 });
 
-const MovieItem = ({ data, fetchMovie }) => {
+const MovieItem = ({ data, fetchMovie, history }) => {
   const { poster_path, vote_average, title } = data;
   const classes = useStyles();
   return (
@@ -60,7 +60,11 @@ const MovieItem = ({ data, fetchMovie }) => {
       <Card className={classes.root}>
         <CardActionArea
           className={classes.card}
-          onClick={() => fetchMovie(data.id)}
+          onClick={() => {
+            fetchMovie(data.id);
+          }}
+          component="a"
+          href="#details"
         >
           <CardMedia
             component="img"

@@ -5,6 +5,7 @@ import App from "./components/App";
 import { createStore, applyMiddleware, compose } from "redux";
 import reducers from "./reducers";
 import thunk from "redux-thunk";
+import "./index.css";
 
 const composeEnhancers =
   (typeof window !== "undefined" &&

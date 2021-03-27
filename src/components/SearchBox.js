@@ -32,9 +32,7 @@ const SearchBox = ({ searchTerm, onTermChange, searchMovies }) => {
         placeholder="Search"
         onChange={onTermChange}
         value={searchTerm}
-        onKeyDown={(e) =>
-          e.code === "Enter" ? searchMovies(searchTerm) : null
-        }
+        onKeyDown={(e) => (e.key === "Enter" ? searchMovies(searchTerm) : null)}
       />
     </div>
   );

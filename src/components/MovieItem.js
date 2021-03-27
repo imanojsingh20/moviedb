@@ -63,9 +63,7 @@ const MovieItem = ({ data, fetchMovie }) => {
         <Card className={classes.root}>
           <CardActionArea
             className={classes.card}
-            onClick={() => {
-              fetchMovie(data.id);
-            }}
+            onClick={() => fetchMovie(data.id)}
             component="a"
             href="#details"
           >

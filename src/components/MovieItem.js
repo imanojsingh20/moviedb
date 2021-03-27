@@ -58,7 +58,7 @@ const MovieItem = ({ data, fetchMovie }) => {
   const { poster_path, vote_average, title } = data;
   const classes = useStyles();
   return (
-    <Grid item xs={6} md={3}>
+    <Grid item xs={6} sm={3}>
       <Box component="div" className={classes.wrapper}>
         <Card className={classes.root}>
           <CardActionArea

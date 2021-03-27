@@ -6,7 +6,6 @@ import { onTermChange } from "../actions/searchBoxActions";
 
 const useStyles = makeStyles({
   input: {
-    margin: "0 1rem",
     "& .MuiInputBase-root": {
       borderBottom: "1px solid rgba(255,255,255,0.6)",
     },

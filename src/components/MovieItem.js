@@ -4,6 +4,7 @@ import {
   CardActionArea,
   CardContent,
   CardMedia,
+  Grid,
   makeStyles,
   Typography,
 } from "@material-ui/core";
@@ -11,7 +12,7 @@ import React from "react";
 
 const useStyles = makeStyles({
   root: {
-    width: 185,
+    maxWidth: 185,
     height: 250,
   },
   card: {
@@ -40,11 +41,12 @@ const useStyles = makeStyles({
   bgImg: {
     position: "absolute",
     width: "100%",
+    height: "100%",
   },
   wrapper: {
     display: "flex",
     flexDirection: "column",
-    width: 185,
+    maxWidth: 185,
   },
   title: {
     textAlign: "center",
@@ -52,38 +54,40 @@ const useStyles = makeStyles({
   },
 });
 
-const MovieItem = ({ data, fetchMovie, history }) => {
+const MovieItem = ({ data, fetchMovie }) => {
   const { poster_path, vote_average, title } = data;
   const classes = useStyles();
   return (
-    <Box component="div" className={classes.wrapper}>
-      <Card className={classes.root}>
-        <CardActionArea
-          className={classes.card}
-          onClick={() => {
-            fetchMovie(data.id);
-          }}
-          component="a"
-          href="#details"
-        >
-          <CardMedia
-            component="img"
-            alt="Contemplative Reptile"
-            image={
-              poster_path
-                ? `https://image.tmdb.org/t/p/w342${poster_path}`
-                : `/poster_placeholder.jpg`
-            }
-            title="Contemplative Reptile"
-            className={classes.bgImg}
-          />
-          <CardContent>{vote_average}</CardContent>
-        </CardActionArea>
-      </Card>
-      <Typography variant="body2" className={classes.title}>
-        {title}
-      </Typography>
-    </Box>
+    <Grid item xs={6} md={3}>
+      <Box component="div" className={classes.wrapper}>
+        <Card className={classes.root}>
+          <CardActionArea
+            className={classes.card}
+            onClick={() => {
+              fetchMovie(data.id);
+            }}
+            component="a"
+            href="#details"
+          >
+            <CardMedia
+              component="img"
+              alt="Contemplative Reptile"
+              image={
+                poster_path
+                  ? `https://image.tmdb.org/t/p/w342${poster_path}`
+                  : `/poster_placeholder.jpg`
+              }
+              title="Contemplative Reptile"
+              className={classes.bgImg}
+            />
+            <CardContent>{vote_average}</CardContent>
+          </CardActionArea>
+        </Card>
+        <Typography variant="body2" className={classes.title}>
+          {title}
+        </Typography>
+      </Box>
+    </Grid>
   );
 };
 

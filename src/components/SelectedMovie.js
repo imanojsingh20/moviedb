@@ -61,7 +61,7 @@ const SelectedMovie = ({ movie, fetchMovie }) => {
   if (Object.keys(movie).length > 1) {
     return (
       <div className={classes.root} id="details">
-        <Grid container spacing={3}>
+        <Grid container justify="center" spacing={3}>
           <Grid item md={3} className={classes.poster}>
             <img src={`https://image.tmdb.org/t/p/w342${poster_path}`} alt="" />
           </Grid>

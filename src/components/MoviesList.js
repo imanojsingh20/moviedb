@@ -36,7 +36,7 @@ const MoviesList = ({ moviesList, listState, fetchMoviesList, fetchMovie }) => {
         </Grid>
       </Box>
     );
-  } else return "loading";
+  } else return <Typography variant="h6">No Result</Typography>;
 };
 
 const mapStateToProps = (state) => {

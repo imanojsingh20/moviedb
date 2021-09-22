@@ -1,0 +1,14 @@
+version: '3'
+services:
+    web:
+        build:
+            context: .
+            dockerfile: Dockerfile.dev
+        environment:
+            - REACT_APP_TOKEN=eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmOTc0ZWY3NTJlMWUzYzgzNGQ5ZTE2ZjBiMmQzMjVjZCIsInN1YiI6IjYwNWMzZjBkODlmNzQ5MDA2YWQwOWY2MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.9HiwdNcmRTo37pkgFw2tXvGysBl1jsTChMP_T3nlDyU
+
+        ports:
+            - '3000:3000'
+        volumes:
+            - '/react/node_modules'
+            - '.:/react'
